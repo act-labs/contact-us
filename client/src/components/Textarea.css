@@ -1,0 +1,38 @@
+.Textarea {
+    position: relative;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    font-size: 14px;
+    max-height: 50vh;
+    max-width: 100%;
+    resize: none;
+    flex: auto;
+    overflow: auto;
+    transition: background-color 0.2s ease-in-out 0s, border-color 0.2s ease-in-out 0s;
+    border-width: 2px;
+    padding: 0;
+}
+
+.Textarea textarea {
+    display: block;
+    resize: none;
+    box-sizing: border-box;
+    color: rgb(9, 30, 66);
+    cursor: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: 1.42857;
+    min-width: 0px;
+    max-width: 100%;
+    width: 100%;
+    min-height: 20px;
+    /* background: transparent; */
+    margin: 0px;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+    outline: none;
+    overflow: auto;
+    padding: 0px;
+}

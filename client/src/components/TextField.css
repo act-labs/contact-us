@@ -1,0 +1,39 @@
+.TextField {
+    align-items: center;
+    box-sizing: border-box;
+    color: rgb(9, 30, 66);
+    cursor: text;
+    display: flex;
+    font-size: 14px;
+
+    justify-content: space-between;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    vertical-align: top;
+    pointer-events: auto;
+
+    border-radius: 3px;
+    border-width: 2px;
+    border-style: solid;
+    flex: auto;
+    overflow: hidden;
+    transition: background-color 0.2s ease-in-out 0s, border-color 0.2s ease-in-out 0s;
+}
+
+.TextField input {
+    box-sizing: border-box;
+    color: inherit;
+    cursor: inherit;
+    font-family: inherit;
+    font-size: 14px;
+    min-width: 0px;
+    width: 100%;
+    height: 2.57143em;
+    line-height: 1.42857;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+    outline: none;
+    padding: 8px 6px;
+}

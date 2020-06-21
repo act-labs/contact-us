@@ -1,0 +1,11 @@
+.Form {
+    display: flex;
+    width: 400px;
+    max-width: 100%;
+    margin: 0px auto;
+    flex-direction: column;
+}
+
+.Form-error {
+    color: red;
+}

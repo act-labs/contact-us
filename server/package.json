@@ -1,0 +1,28 @@
+{
+  "name": "server",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.2",
+    "express": "^4.17.1",
+    "faker": "^4.1.0",
+    "mysql": "^2.17.1",
+    "pm2": "^3.5.1"
+  },
+  "scripts": {
+    "seed": "cross-env DB_HOST=localhost DB_USER=root DB_PASSWORD=jstest DB_DATABASE=jstest node ./src/scripts/seed.js",
+    "test": "yarn jest",
+    "jest": "cross-env DB_HOST=localhost DB_USER=root DB_PASSWORD=jstest DB_DATABASE=jstest jest",
+    "start": "yarn start-mysql && yarn start-server",
+    "stop": "yarn stop-mysql && yarn stop-server",
+    "start-server": "cross-env DB_HOST=localhost DB_USER=root DB_PASSWORD=jstest DB_DATABASE=jstest pm2 start src/server.js --watch",
+    "start-mysql": "docker run --name js-test-mysql -e MYSQL_ROOT_PASSWORD=jstest -e MYSQL_DATABASE=jstest -p 3306:3306 -d schema-mysql && echo 'Waiting for MySQL to Boot...' && sleep 10 && echo 'Booted!'",
+    "stop-mysql": "docker stop js-test-mysql && docker rm js-test-mysql",
+    "stop-server": "pm2 stop all",
+    "restart": "yarn stop && yarn clean && yarn build && yarn start",
+    "clean": "docker rmi schema-mysql",
+    "build": "cd ./src/sql/migrations && docker build -t schema-mysql ."
+  }
+}
